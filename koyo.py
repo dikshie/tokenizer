@@ -26,20 +26,37 @@ padanan.close()
 #print type(lines_3)
 #print len(lines_3)
 
+panjang=len(lines_3)
 rem=[]
-for i in range(len(lines_3)):
+rem_2=[]
+rem_3=[]
+l=[]
+h=[]
+z=[]
+
+for i in range(panjang):
     rem.append(lines_3[i])
-#    print i, lines_3[i]
     token = ntk.word_tokenize(rem[i])
-#    print token[0]
+    rem_2.append(token[2:])
     for j in range(len(lines_2)):
         posn=re.match(token[0],lines_2[j])
         if posn==None:
             pass
         else:
-            print j
+            pos_n=j
+    l=rem_2[i]
+    for k in range(len(l)):
+        if (k % 2)==0:
+            h.append(l[k])
+    z.append(h) 
+    h=[]
 
+print z
+#print len(rem_3)
+#print rem_3
+#for k in range(len(rem_2[i])):
+#        l=rem_2[i]
+#        if (k % 2) == 0:
+#            rem_3.append(l[k])
+#print rem_3
 
-#token=ntk.word_tokenize(lines_3[0])
-#print lines_3[0]
-#print token
