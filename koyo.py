@@ -51,7 +51,26 @@ for i in range(panjang):
     z.append(h) 
     h=[]
 
-print z
+    token=[]
+    while (len(z)!=0):
+        token = ntk.word_tokenize(z[i])
+        p=string.find(token[0],'-')
+        if p==-1:
+            posisi=0
+        else:
+            posisi=1
+
+        corval=1
+        if (posisi>0):
+            token[0] = string.replace(token[0],'-','')
+            corval=-1
+        pos_m=re.match(token[0],lines_2[i])
+        #M=pos_n,corval  #change to ndarray matrix?
+        z.reverse()
+        z.pop()
+        z.reverse() #again
+
+#print z
 #print len(rem_3)
 #print rem_3
 #for k in range(len(rem_2[i])):
